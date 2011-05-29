@@ -14,7 +14,7 @@ class Publisher(models.Model):
 class Authour(models.Model):
     firstName = models.CharField(max_length=30)
     lastName = models.CharField(max_length=40)
-    email = models.EmailField()
+    email = models.EmailField(blank=True,verbose_name="e-mail")
 
     def __unicode__(self):
         return u"%s %s" % (self.firstName,self.lastName)
@@ -23,7 +23,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100)
     authors = models.ManyToManyField(Authour)
     publisher = models.ForeignKey(Publisher)
-    publicationDate = models.DateField()
+    publicationDate = models.DateField(blank=True,null=True)
 
     def __unicode__(self):
         return self.title
