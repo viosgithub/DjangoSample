@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 from chapter7.books.models import Book
+from django.core.mail import send_mail
 
 def searchForm(request):
     return render_to_response("search_form.html")
@@ -19,3 +20,4 @@ def search(request):
                 "query":q})
 
     return render_to_response("search_form.html",{"errors":errors})
+

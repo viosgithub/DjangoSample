@@ -20,4 +20,5 @@ urlpatterns = patterns('',
     (r"^meta/$","chapter7.views.displayMeta"),
     (r"^search-form/$",views.searchForm),
     (r"^search/$",views.search),
+    (r"^contact/$","chapter7.contact.views.contact"),
 )
