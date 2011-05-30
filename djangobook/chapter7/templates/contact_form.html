@@ -5,20 +5,31 @@
     <body>
         <h1>Contact us</h1>
 
-        {% if errors %}
-            <ul>
-                {% for error in errors %}
-                <li>{{error}}</li>
-                {% endfor %}
-            </ul>
+        {% if forms.errors %}
+        <p style="color:red;">
+        Please corrct the error {{form.erros|pluralize}} below.
+        </p>
         {% endif %}
 
-        <form action="/contact/" method="post">
-            <p>Subject: <input type="text" name="subject"></p>
-            <p>Your e-mail (optional):<input type="text" name="email"></p>
-            <p>Message: <textarea name="message" rows="10" cols="50">
-            </textarea></p>
+        <form action"" method="post">
+            <table>
+                {{form.as_table}}
+            </table>
             <input type="submit" value="Submit">
         </form>
     </body>
 </html>
+<style type="text/css">
+    ul.errorlist{
+        margin:0;
+        padding:0;
+    }
+    .errorlist li{
+        background-color:red;
+        color:white;
+        display:block;
+        font-size:10px;
+        margin:0 0 3px;
+        padding:4px 5px;
+}}
+</style>

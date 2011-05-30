@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+
     (r"^hello/$","chapter7.views.hello"),
     (r"^url/$","chapter7.views.currentUrlView"),
     (r"^agent/$","chapter7.views.uaDisplay2"),
@@ -21,4 +22,5 @@ urlpatterns = patterns('',
     (r"^search-form/$",views.searchForm),
     (r"^search/$",views.search),
     (r"^contact/$","chapter7.contact.views.contact"),
+    (r"^contact/thanks/$","chapter7.contact.views.thanks4Contact"),
 )
